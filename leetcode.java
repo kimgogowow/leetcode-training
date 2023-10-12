@@ -25,3 +25,25 @@ class Solution {
         }
 
 }
+
+2457. Minimum Addition to Make Integer Beautiful [math,number sum]
+class Solution {
+        public long makeIntegerBeautiful(long n, int target) {
+                long n0 = n, base = 1;//n=123,t=3
+                while(calSum(n)>target){//sum= 6 >3
+                        n = n/10 +1; //n=12+1 = 13
+                        base *= 10; //base = 1*10 = 10
+                }
+                return base * n - n0; //10*13 -123 = 130-123 = 7
+
+
+        }
+        public long calSum(long n){
+                long sum = 0;
+                while(n>0){
+                        sum += n%10;
+                        n /= 10;
+                }
+                return sum;
+        }
+}

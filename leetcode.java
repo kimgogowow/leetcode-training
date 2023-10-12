@@ -30,11 +30,11 @@ class Solution {
 class Solution {
         public long makeIntegerBeautiful(long n, int target) {
                 long n0 = n, base = 1;//n=123,t=3
-                while(calSum(n)>target){//sum= 6 >3
-                        n = n/10 +1; //n=12+1 = 13
-                        base *= 10; //base = 1*10 = 10
+                while(calSum(n)>target){//sum= 6 >3 / sum = 4>3 / 2<3->stop
+                        n = n/10 +1; //n=12+1 = 13 /n=1+1 =2
+                        base *= 10; //base = 1*10 = 10 /base = 10*10 = 100
                 }
-                return base * n - n0; //10*13 -123 = 130-123 = 7
+                return base * n - n0; //10*13 -123 = 130-123 = 7 /100*2-123 =77
 
 
         }
